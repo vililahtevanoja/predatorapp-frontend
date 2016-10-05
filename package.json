@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "latest",
+    "codelyzer": "^1.0.0-beta.0",
     "typescript": "^2.0.3"
   },
   "cordovaPlugins": [

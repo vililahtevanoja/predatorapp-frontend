@@ -4,18 +4,18 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { DownInformation } from '../models/down-information';
-import { Formation } from '../models/formation'
-import { Game } from '../models/game'
-import { PlayInformation } from '../models/play-information'
-import { PlayType } from '../models/play-type'
-import { Player } from '../models/player'
-import { Position } from '../models/position'
-import { Team } from '../models/team'
+import { Formation } from '../models/formation';
+import { Game } from '../models/game';
+import { PlayInformation } from '../models/play-information';
+import { PlayType } from '../models/play-type';
+import { Player } from '../models/player';
+import { Position } from '../models/position';
+import { Team } from '../models/team';
 
 @Injectable()
 export class ScoutDataService {
   constructor(private http: Http) {  }
-  private rootUrl = 'app/scoutdata';
+  private rootUrl = 'app';
   private urls = {
     downInformations: this.rootUrl + '/downinformations',
     formations: this.rootUrl + '/formations',
@@ -32,27 +32,27 @@ export class ScoutDataService {
     return this.http.get(this.urls.downInformations)
       .toPromise()
       .then(response => response.json().data as DownInformation[])
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   getDownInformation(id: number): Promise<DownInformation> {
     return this.getDownInformations()
-      .then(downInformations => downInformations.find(downInformation => downInformation.id === id))
+      .then(downInformations => downInformations.find(downInformation => downInformation.id === id));
   }
 
   createDownInformation(downInformation: DownInformation): Promise<DownInformation> {
     return this.http.post(this.urls.downInformations, JSON.stringify(downInformation))
       .toPromise()
       .then(res => res.json().data as DownInformation)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   updateDownInformation(downInformation: DownInformation): Promise<DownInformation> {
-    const url = "{$this.urls.downInformations}/${downInformation.id}";
+    const url = '{$this.urls.downInformations}/${downInformation.id}';
     return this.http.post(url, JSON.stringify(downInformation), {headers: this.headers})
       .toPromise()
       .then(() => downInformation)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   getFormations(): Promise<Formation[]> {
@@ -71,15 +71,15 @@ export class ScoutDataService {
     return this.http.post(this.urls.formations, JSON.stringify(formation))
       .toPromise()
       .then(res => res.json().data as Formation)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   updateFormation(formation: Formation): Promise<Formation> {
-    const url = "${this.urls.formations}/${formation.id}";
+    const url = '${this.urls.formations}/${formation.id}';
     return this.http.post(url, JSON.stringify(formation), {headers: this.headers})
       .toPromise()
       .then(() => formation)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   getGames(): Promise<Game[]> {
@@ -98,15 +98,15 @@ export class ScoutDataService {
     return this.http.post(this.urls.games, JSON.stringify(game))
       .toPromise()
       .then(res => res.json().data as Game)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   updateGame(game: Game): Promise<Game> {
-    const url = "${this.urls.games}/${game.id}";
+    const url = '${this.urls.games}/${game.id}';
     return this.http.post(url, JSON.stringify(game))
       .toPromise()
       .then(() => game)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   getPlayInformations(): Promise<PlayInformation[]> {
@@ -118,22 +118,22 @@ export class ScoutDataService {
 
   getPlayInformation(id: number): Promise<PlayInformation> {
     return this.getPlayInformations()
-      .then(playInformations => playInformations.find(playInformation => playInformation.id === id))
+      .then(playInformations => playInformations.find(playInformation => playInformation.id === id));
   }
 
   createPlayInformation(playInformation: PlayInformation): Promise<PlayInformation> {
     return this.http.post(this.urls.playInformations, JSON.stringify(playInformation))
       .toPromise()
       .then(res => res.json().data as PlayInformation)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   updatePlayInformation(playInformation: PlayInformation): Promise<PlayInformation> {
-    const url = "${this.urls.playInformations}/${playInformation.id}";
+    const url = '${this.urls.playInformations}/${playInformation.id}';
     return this.http.post(url, JSON.stringify(playInformation))
       .toPromise()
       .then(() => playInformation)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   getPlayTypes(): Promise<PlayType[]> {
@@ -152,15 +152,15 @@ export class ScoutDataService {
     return this.http.post(this.urls.playTypes, JSON.stringify(playType))
       .toPromise()
       .then(res => res.json().data as PlayType)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   updatePlayType(playType: PlayType): Promise<PlayType> {
-    const url = "${this.urls.playInformation}/${playType.id}";
+    const url = '${this.urls.playInformation}/${playType.id}';
     return this.http.post(url, JSON.stringify(playType))
       .toPromise()
       .then(() => playType)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   getPlayers(): Promise<Player[]> {
@@ -179,15 +179,15 @@ export class ScoutDataService {
     return this.http.post(this.urls.players, JSON.stringify(player))
       .toPromise()
       .then(response => response.json().data as Player)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   updatePlayer(player: Player): Promise<Player> {
-    const url = "${this.urls.players}/${player.id}";
+    const url = '${this.urls.players}/${player.id}';
     return this.http.post(url, JSON.stringify(player))
       .toPromise()
       .then(() => player)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   getPositions(): Promise<Position[]> {
@@ -206,15 +206,15 @@ export class ScoutDataService {
     return this.http.post(this.urls.positions, JSON.stringify(position))
       .toPromise()
       .then(response => response.json().data as Position)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   updatePosition(position: Position): Promise<Position> {
-    const url = "${this.urls.positions}/${position.id}";
+    const url = '${this.urls.positions}/${position.id}';
     return this.http.post(url, JSON.stringify(position))
       .toPromise()
       .then(() => position)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   getTeams(): Promise<Team[]> {
@@ -232,15 +232,15 @@ export class ScoutDataService {
     return this.http.post(this.urls.teams, JSON.stringify(team))
       .toPromise()
       .then(response => response.json().data as Team)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   updateTeam(team: Team): Promise<Team> {
-    const url = "${this.url.teams}/${team.id}";
+    const url = '${this.url.teams}/${team.id}';
     return this.http.post(url, JSON.stringify(team))
       .toPromise()
       .then(() => team)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {

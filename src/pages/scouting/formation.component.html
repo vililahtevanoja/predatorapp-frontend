@@ -1,0 +1,10 @@
+<ion-grid>
+  <p>FORMATION</p>
+  <ion-row wrap>
+    <ion-col width-33>
+      <button ion-button *ngFor="let formation of formations">
+        {{formation.name}}
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

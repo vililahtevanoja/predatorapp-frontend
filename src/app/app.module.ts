@@ -1,28 +1,28 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { ScoutingPage } from '../pages/scouting/scouting';
+import { ScoutingModule } from '../pages/scouting/scouting.module';
 import { HomePage } from '../pages/home/home';
-import { BrowsePage } from "../pages/browsing/browse";
+import { BrowsePage } from '../pages/browsing/browse';
 import { TabsPage } from '../pages/tabs/tabs';
+import { ScoutingPage } from '../pages/scouting/scouting.page';
 
 import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
 import { InMemoryDataService } from '../services/in-memory-data.service';
-import { ScoutDataService } from '../services/scout-data.service';
 
-import './rxjs-extensions';
+import '../rxjs-extensions';
 
 @NgModule({
   declarations: [
     MyApp,
-    ScoutingPage,
     BrowsePage,
     HomePage,
     TabsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    ScoutingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,8 +30,7 @@ import './rxjs-extensions';
     HomePage,
     ScoutingPage,
     BrowsePage,
-    TabsPage
-  ],
-  providers: [ScoutDataService]
+    TabsPage,
+  ]
 })
 export class AppModule {}
