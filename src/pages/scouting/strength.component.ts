@@ -11,7 +11,7 @@ export class StrengthComponent {
   ) {}
   selectedStrength: Strength;
 
-  onSelect(strength: Strength): void {
+  selectStrength(strength: Strength): void {
     this.selectedStrength = strength;
   }
 }

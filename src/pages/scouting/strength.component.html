@@ -1,8 +1,8 @@
 <div>
   Strength:
   <ion-buttons>
-    <button ion-button>left</button>
-    <button ion-button>-</button>
-    <button ion-button>right</button>
+    <button ion-button [color]="(selectedStrength && selectedStrength.toString() === 'left') ? 'primary' : 'light'" (click)="selectStrength('left')">left</button>
+    <button ion-button [color]="(selectedStrength && selectedStrength.toString()  === '-') ? 'primary' : 'light'" (click)="selectStrength('-')">-</button>
+    <button ion-button [color]="(selectedStrength && selectedStrength.toString()  === 'right') ? 'primary' : 'light'" (click)="selectStrength('right')">right</button>
   </ion-buttons>
 </div>

@@ -1,7 +1,8 @@
 <div>
+  DIRECTION:
   <ion-buttons>
-    <button ion-button>strong</button>
-    <button ion-button>-</button>
-    <button ion-button>weak</button>
+    <button ion-button [color]="(selectedDirection && selectedDirection.toString() === 'strong') ? 'primary' : 'light'" (click)="selectDirection('strong')">strong</button>
+    <button ion-button [color]="(selectedDirection && selectedDirection.toString() === '-') ? 'primary' : 'light'" (click)="selectDirection('-')">-</button>
+    <button ion-button [color]="(selectedDirection && selectedDirection.toString() === 'weak') ? 'primary' : 'light'" (click)="selectDirection('weak')">weak</button>
   </ion-buttons>
 </div>

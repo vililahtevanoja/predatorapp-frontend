@@ -11,7 +11,7 @@ export class DirectionComponent {
   ) {}
   selectedDirection: Direction;
 
-  onSelect(direction: Direction): void {
+  selectDirection(direction: Direction): void {
     this.selectedDirection = direction;
   }
 }

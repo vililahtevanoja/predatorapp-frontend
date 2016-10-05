@@ -1,0 +1,9 @@
+<div>
+  PLAY:
+  <div>
+  <!--<ion-buttons *ngFor="let playType of playTypes">-->
+    <button ion-button *ngFor="let playType of playTypes" (click)="selectPlayType(playType)"
+            [color]="(selectedPlayType && selectedPlayType.id === playType.id) ? 'primary' : 'light'">{{playType.name}}</button>
+  <!--</ion-buttons>-->
+  </div>
+</div>

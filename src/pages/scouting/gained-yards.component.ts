@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 export class GainedYardsComponent {
   constructor(
 ) {}
+
+  gainedYardsMin: number = 0;
+  gainedYardsMax: number= 10;
   gainedYards: number;
 
   onSelect(yards: number): void {

@@ -9,7 +9,8 @@ export class DownComponent {
   constructor(
   ) {}
   selectedDown: number;
-  onSelect(down: number): void {
+
+  selectDown(down: number): void {
     this.selectedDown = down;
   }
 }

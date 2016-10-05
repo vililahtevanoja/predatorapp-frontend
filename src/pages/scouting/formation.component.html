@@ -1,10 +1,17 @@
 <ion-grid>
   <p>FORMATION</p>
-  <ion-row wrap>
+  <ion-row responsive-sm>
     <ion-col width-33>
-      <button ion-button *ngFor="let formation of formations">
+      <!--<ion-item *ngFor="let formation of formations">-->
+        <!--<ion-label>{{formation.name}}</ion-label>-->
+        <!--<ion-radio color="primary" value="{{formation.name}}"></ion-radio>-->
+      <!--</ion-item>-->
+      <button ion-button *ngFor="let formation of formations" [color]="(selectedFormation && selectedFormation.id === formation.id) ? 'primary' : 'light'" (click)="selectFormation(formation)">
         {{formation.name}}
       </button>
     </ion-col>
   </ion-row>
+  <button ion-button color="secondary" (click)="addFormation()" outline>
+    +
+  </button>
 </ion-grid>

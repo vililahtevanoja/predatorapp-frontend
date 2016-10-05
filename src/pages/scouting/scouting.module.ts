@@ -9,10 +9,11 @@ import { DownComponent } from './down.component';
 import { FormationComponent } from './formation.component';
 import { GainedYardsComponent } from './gained-yards.component';
 import { GameBrowserComponent } from './game-browser.component';
-import { PlayComponent } from './play.component';
+import { PlayComponent } from './play-type.component';
 import { StrengthComponent } from './strength.component';
 import { TargetComponent } from './target.component';
 import { YardsToGoComponent } from './yards-to-go.component';
+import { SavePlayComponent } from './save-play.component';
 
 import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
 import { InMemoryDataService } from '../../services/in-memory-data.service';
@@ -31,7 +32,8 @@ import '../../rxjs-extensions';
     PlayComponent,
     StrengthComponent,
     TargetComponent,
-    YardsToGoComponent
+    YardsToGoComponent,
+    SavePlayComponent
   ],
   imports: [
     HttpModule,
@@ -50,7 +52,8 @@ import '../../rxjs-extensions';
     PlayComponent,
     StrengthComponent,
     TargetComponent,
-    YardsToGoComponent
+    YardsToGoComponent,
+    SavePlayComponent
   ],
   providers: [ScoutDataService]
 })

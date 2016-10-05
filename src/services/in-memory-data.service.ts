@@ -1,7 +1,7 @@
 import { InMemoryDbService } from 'angular2-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    let playTypes = [
+    let playtypes = [
       { id: 1, name: 'run' },
       { id: 2, name: 'pass' }
     ];
@@ -27,6 +27,6 @@ export class InMemoryDataService implements InMemoryDbService {
     let games = [
       { id: 1, homeTeamId: 1, visitorTeamId: 2, date: Date.now }
     ];
-    return { playTypes, formations, playInformations, teams, games };
+    return { playtypes, formations, playInformations, teams, games };
   }
 }

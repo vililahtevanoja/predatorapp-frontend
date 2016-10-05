@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class YardsToGoComponent {
   constructor(
   ) {}
-  gainedYardsMin: number = 0;
-  gainedYardsMax: number = 40;
-  gainedYards: number = 0;
+  yardsToGoMin: number = 0;
+  yardsToGoMax: number = 40;
+  yardsToGo: number = 0;
 
-  onSelect(gainedYards: number): void {
-    this.gainedYards = gainedYards;
+  onSelect(yardsToGo: number): void {
+    this.yardsToGo = yardsToGo;
   }
 }

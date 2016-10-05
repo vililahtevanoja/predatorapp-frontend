@@ -4,7 +4,7 @@ import { ScoutDataService } from '../../services/scout-data.service';
 
 @Component({
   selector: 'play',
-  templateUrl: 'play.component.html'
+  templateUrl: 'play-type.component.html'
 })
 
 export class PlayComponent implements OnInit {
@@ -13,14 +13,14 @@ export class PlayComponent implements OnInit {
   ) {}
 
   playTypes: PlayType[] = [];
-  selectedPlay: PlayType;
+  selectedPlayType: PlayType;
 
   ngOnInit(): void {
     this.getPlayTypes();
   }
 
-  onSelect(play: PlayType): void {
-    this.selectedPlay = play;
+  selectPlayType(play: PlayType): void {
+    this.selectedPlayType = play;
   }
 
   getPlayTypes(): void {

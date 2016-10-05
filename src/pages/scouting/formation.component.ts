@@ -24,7 +24,11 @@ export class FormationComponent implements OnInit {
     this.scoutDataService.getFormations().then(formations => this.formations = formations);
   }
 
-  onSelect(formation: Formation): void {
+  selectFormation(formation: Formation): void {
     this.selectedFormation = formation;
+  }
+
+  addFormation(): void {
+
   }
 }
