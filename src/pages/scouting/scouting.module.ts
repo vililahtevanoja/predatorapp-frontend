@@ -13,7 +13,7 @@ import { PlayComponent } from './play-type.component';
 import { StrengthComponent } from './strength.component';
 import { TargetComponent } from './target.component';
 import { YardsToGoComponent } from './yards-to-go.component';
-import { SavePlayComponent } from './save-play.component';
+import { SavePlayComponent } from './save-down.component';
 
 import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
 import { InMemoryDataService } from '../../services/in-memory-data.service';

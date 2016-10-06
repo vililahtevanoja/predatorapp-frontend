@@ -5,7 +5,7 @@ import { Formation } from '../../models/formation';
 
 @Component({
   selector: 'save-play',
-  templateUrl: 'save-play.component.html',
+  templateUrl: 'save-down.component.html',
 })
 
 export class SavePlayComponent {
