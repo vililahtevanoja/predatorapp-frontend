@@ -7,4 +7,5 @@ export interface DownInformation {
   formationId: number;
   playId: number;
   targetId: number;
+  gameId: number;
 }
