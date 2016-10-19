@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PlayType } from '../../models/play-type';
 import { ScoutDataService } from '../../services/scout-data.service';
 
@@ -7,11 +7,12 @@ import { ScoutDataService } from '../../services/scout-data.service';
   templateUrl: 'play-type.component.html'
 })
 
-export class PlayComponent implements OnInit {
+export class PlayTypeComponent implements OnInit {
   constructor(
     private scoutDataService: ScoutDataService
   ) {}
 
+  @Output() onPlayTypeChange: EventEmitter<PlayType> = new EventEmitter<PlayType>();
   playTypes: PlayType[] = [];
   selectedPlayType: PlayType;
 
@@ -19,8 +20,9 @@ export class PlayComponent implements OnInit {
     this.getPlayTypes();
   }
 
-  selectPlayType(play: PlayType): void {
-    this.selectedPlayType = play;
+  selectPlayType(playType: PlayType): void {
+    this.selectedPlayType = playType;
+    this.onPlayTypeChange.emit(playType);
   }
 
   getPlayTypes(): void {

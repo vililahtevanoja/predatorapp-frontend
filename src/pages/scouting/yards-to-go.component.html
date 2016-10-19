@@ -2,7 +2,10 @@
   <p class="choiceTitle"> YARDS TO GO:
     <label>0</label>
   </p>
-  <i>{{yardsToGoMin}}</i>
-  <ion-range [(ngModel)]="yardsToGo" step="1" min="{{yardsToGoMin}}" max="{{yardsToGoMax}}" color="danger" pin="true" ></ion-range>
-  <i>{{yardsToGoMax}}</i>
+  <div>
+  <i style="float:left;width:10%;">{{yardsToGoMin}}</i>
+  <ion-range style="float:left;width:80%" [(ngModel)]="yardsToGo" step="1" min="{{yardsToGoMin}}" max="{{yardsToGoMax}}" color="danger" pin="true"
+             (ionChange)="updateYardsToGo();"></ion-range>
+  <i style="float:right;width:10%;">{{yardsToGoMax}}</i>
+  </div>
 </div>

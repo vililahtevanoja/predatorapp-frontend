@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Strength } from './types';
 
 @Component({
@@ -9,9 +9,11 @@ import { Strength } from './types';
 export class StrengthComponent {
   constructor(
   ) {}
+  @Output() onStrengthChange: EventEmitter<Strength> = new EventEmitter<Strength>();
   selectedStrength: Strength;
 
   selectStrength(strength: Strength): void {
     this.selectedStrength = strength;
+    this.onStrengthChange.emit(strength);
   }
 }

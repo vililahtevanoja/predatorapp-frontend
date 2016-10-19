@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Down } from './types';
 
 @Component({
   selector: 'down',
@@ -8,9 +9,11 @@ import { Component } from '@angular/core';
 export class DownComponent {
   constructor(
   ) {}
-  selectedDown: number;
+  @Input() selectedDown: Down;
+  @Output() onDownChange: EventEmitter<Down> = new EventEmitter<Down>();
 
-  selectDown(down: number): void {
+  selectDown(down: Down): void {
     this.selectedDown = down;
+    this.onDownChange.emit(this.selectedDown);
   }
 }

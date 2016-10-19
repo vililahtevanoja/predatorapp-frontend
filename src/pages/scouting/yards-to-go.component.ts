@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'yards-to-go',
@@ -8,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class YardsToGoComponent {
   constructor(
   ) {}
+  @Input() initialYardsToGo: number;
+  @Output() onYardsToGoChange: EventEmitter<number> = new EventEmitter<number>();
+  yardsToGo: number = this.initialYardsToGo;
   yardsToGoMin: number = 0;
   yardsToGoMax: number = 40;
-  yardsToGo: number = 0;
 
-  onSelect(yardsToGo: number): void {
-    this.yardsToGo = yardsToGo;
+  updateYardsToGo(): void {
+    this.onYardsToGoChange.emit(this.yardsToGo);
   }
 }

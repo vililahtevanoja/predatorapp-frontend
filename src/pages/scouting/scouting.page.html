@@ -9,13 +9,13 @@
 <ion-content padding>
   <div class="row scout-data-input">
     <div>
-      <down></down>
-      <yards-to-go></yards-to-go>
-      <strength></strength>
-      <formation></formation>
-      <play></play>
-      <direction></direction>
-      <gained-yards></gained-yards>
+      <down [selectedDown]="gameState.down" (onDownChange)='onDownChange($event)'></down>
+      <yards-to-go [initialYardsToGo]="gameState.yardsToGo" (onYardsToGoChange)='onYardsToGoChange($event)'></yards-to-go>
+      <strength (onStrengthChange)='onStrengthChange($event)'></strength>
+      <formation (onFormationChange)='onFormationChange($event)'></formation>
+      <play (onPlayTypeChange)='onPlayTypeChange($event)'></play>
+      <direction (onDirectionChange)='onDirectionChange($event)'></direction>
+      <gained-yards (onGainedYardsChange)='onGainedYardsChange($event)'></gained-yards>
       <save-play></save-play>
     </div>
   </div>

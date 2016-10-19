@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Direction } from './types';
 
 @Component({
@@ -10,8 +10,10 @@ export class DirectionComponent {
   constructor(
   ) {}
   selectedDirection: Direction;
+  @Output() onDirectionChange: EventEmitter<Direction> = new EventEmitter<Direction>();
 
   selectDirection(direction: Direction): void {
     this.selectedDirection = direction;
+    this.onDirectionChange.emit(direction);
   }
 }

@@ -13,7 +13,7 @@ export class SavePlayComponent {
     private scoutDataService: ScoutDataService
   ) {}
 
-  onClick(): void {
+  onSave(): void {
 
   }
 }

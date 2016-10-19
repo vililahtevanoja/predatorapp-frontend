@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Player } from '../../models/player';
 
 @Component({
@@ -9,6 +9,7 @@ import { Player } from '../../models/player';
 export class TargetComponent {
   constructor(
   ) {}
+  
   selectedTarget: Player;
 
   onSelect(target: Player): void {
